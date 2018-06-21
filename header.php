@@ -17,61 +17,74 @@
 <?php wp_body(); ?>
 
 <div class="wrapper">
-    <?php /*
-    <div class="pre-header">
+
+    <header class="header is-fixed js-header">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <nav class="second-menu">
-                        <?php wp_nav_menu(array(
-                            'theme_location' => 'second-menu',
-                            'container' => false,
-                            'menu_class' => 'menu-container',
-                            'menu_id' => '',
-                            'fallback_cb' => 'wp_page_menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth' => 2
-                        )); ?>
-                    </nav>
+            <div class="row header-row">
+                <div class="col-sm-7 header-phone">
+                    <?php if (has_phones()) { ?>
+                        <img src="<?php echo get_template_directory_uri() . '/assets/img/kyivstar-icon.png' ?>" alt="kyivstar icon">
+                        <ul class="phone">
+                            <?php foreach (get_phones() as $phone) { ?>
+                                <li class="phone-item">
+                                    <a href="tel:<?php echo esc_attr(get_phone_number($phone)); ?>" class="phone-number">
+                                        <?php echo esc_html($phone); ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    Some info here
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    Some info here
+                <div class="col-sm-5 text-right header-social">
+                    <?php if (has_social()) { ?>
+                        <ul class="social">
+                            <?php foreach (get_social() as $social) { ?>
+                                <li class="social-item">
+                                    <a href="<?php echo esc_attr(esc_url($social['url'])); ?>" class="social-link" target="_blank">
+                                        <i class="<?php echo esc_attr($social['icon']); ?>" aria-hidden="true"
+                                           aria-label="<?php echo esc_attr($social['text']); ?>"></i>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
-        </div>
-    </div>
-    */ ?>
-
-    <header class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-
+            <div class="row header-row">
+                <div class="col-lg-3 header-logo">
+                    <div class="logo"><?php get_default_logo_link(); ?></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                    <?php get_search_form(); ?>
+                <div class="col-lg-9 header-nav text-right">
+                    <?php if (has_nav_menu('main-nav')) { ?>
+                        <nav class="nav js-menu">
+                            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                            <?php wp_nav_menu(array(
+                                'theme_location' => 'main-nav',
+                                'container' => false,
+                                'menu_class' => 'menu-container',
+                                'menu_id' => '',
+                                'fallback_cb' => 'wp_page_menu',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 3
+                            )); ?>
+                        </nav>
+                    <?php } ?>
                 </div>
             </div>
         </div>
     </header>
 
-    <?php if (has_nav_menu('main-nav')) { ?>
-        <nav class="nav js-menu">
-            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main-nav',
-                'container' => false,
-                'menu_class' => 'menu-container',
-                'menu_id' => '',
-                'fallback_cb' => 'wp_page_menu',
-                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                'depth' => 3
-            )); ?>
-        </nav>
-    <?php } ?>
+    <span class="button-small">test</span>
+    <span class="button-medium">test</span>
+    <span class="button-large">test</span>
+
+    <span class="button-small button-inverse">test</span>
+    <span class="button-medium button-inverse">test</span>
+    <span class="button-large button-inverse">test</span>
+
+    <span class="button-small button-outline">test</span>
+    <span class="button-medium button-outline">test</span>
+    <span class="button-large button-outline">test</span>
 
     <div class="page-wrapper container">
 

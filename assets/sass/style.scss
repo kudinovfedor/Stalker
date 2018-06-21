@@ -36,8 +36,8 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "elements/responsive-titles";
 @import "elements/scroll-top";
 @import "elements/forms";
-//@import "elements/buttons";
-@import "elements/buttons-2";
+@import "elements/buttons";
+//@import "elements/buttons-2";
 //@import "elements/images";
 @import "elements/links";
 @import "elements/pagination";
@@ -98,7 +98,7 @@ body {
     min-height: 100%;
 
     @media #{$mobile} {
-        padding-top: 80px;
+        padding-top: 70px !important;
     }
 }
 

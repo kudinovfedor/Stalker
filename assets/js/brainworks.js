@@ -5,7 +5,7 @@
         console.info('The site developed by BRAIN WORKS digital agency');
         console.info('Сайт разработан маркетинговым агентством BRAIN WORKS');
 
-        var html = $('html');
+        var html = $('html'), body = $('body'), header = $('.js-header'), offsetTop = $(window).scrollTop();
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
         if (isMobile) {
@@ -13,6 +13,30 @@
         }
 
         html.removeClass('no-js').addClass('js');
+
+        if (!body.hasClass('home')) {
+            $('.wrapper').css('paddingTop', header.outerHeight());
+
+            $(window).on('resize', function () {
+                $('.wrapper').css('paddingTop', header.outerHeight());
+            });
+        }
+
+        offsetTop = $(window).scrollTop();
+
+        if (offsetTop > 200) {
+            header.addClass('is-darken');
+        }
+
+        $(window).on('scroll', function (e) {
+            offsetTop = $(window).scrollTop();
+
+            if (offsetTop > 200) {
+                header.addClass('is-darken');
+            } else {
+                header.removeClass('is-darken');
+            }
+        });
 
         // Stick Footer
         var footerHeight = $('.footer').outerHeight() + 20;

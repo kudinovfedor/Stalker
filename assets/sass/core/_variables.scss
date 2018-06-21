@@ -2,7 +2,7 @@ $debug: false !default;
 $image-url-path: "assets/img/" !default;
 $font-url-path: "assets/fonts/" !default;
 
-$borderRadius: 4px;
+$borderRadius: 10px;
 $shadow: 0 0 10px rgba(#000, .7);
 
 // BRAND
@@ -61,8 +61,8 @@ $menu-close-color: $themeColorTwo;
 $menuContainerMobilePaddingTop: 30%;
 
 // FOOTER
-$footerBgColor: #fff;
-$footerFontColor: #232323;
+$footerBgColor: #1b2328;
+$footerFontColor: #fff;
 $footerLinkColorActive: darken($footerFontColor, 5%);
 
 // WRAPPER
@@ -79,10 +79,10 @@ $linkFontColorActive: lighten($linkFontColor, 20%);
 // BUTTONS
 $buttonFontColor: #fff;
 $buttonFontColorActive: #fff;
-$buttonBgColor: $themeColorTwo;
-$buttonBgColorActive: darken($buttonBgColor, 10%);
-$buttonBorderColor: $themeColorTwo;
-$buttonOutlinedFirstColor: $themeColorTwo;
+$buttonBgColor: #ff9c00;
+$buttonBgColorActive: darken($buttonBgColor, 5%);
+$buttonBorderColor: $buttonBgColor;
+$buttonOutlinedFirstColor: $buttonBgColor;
 $buttonOutlinedSecondColor: #fff;
 
 // TABLE

@@ -31,29 +31,45 @@ button {
     @extend %button-style;
     padding: 16px 60px;
     font-size: 20px;
+    @include border-radius(30px);
 }
 
 .button-medium {
     @extend %button-style;
     padding: 14px 25px;
     font-size: 16px;
+    @include border-radius(22px);
 }
 
 .button-small {
     @extend %button-style;
     padding: 10px 15px;
     font-size: 14px;
+    @include border-radius(15px);
 }
 
 .button-inverse {
     @extend %button-style;
-    color: $buttonFontColorActive;
-    background-color: $buttonBgColorActive;
+    color: #df9a45;
+    background-color: #fff;
 
     &:hover,
     &:active {
-        color: $buttonFontColor;
-        background-color: $buttonBgColor;
+        color: #fff;
+        background-color: #ff9c00;
+    }
+}
+
+.button-outline {
+    border: 2px solid #ff9c00;
+    color: #df9a45;
+    background-color: transparent;
+
+    &:hover,
+    &:active {
+        border: 2px solid #ff9c00;
+        color: #fff;
+        background-color: #ff9c00;
     }
 }
 
